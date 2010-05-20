@@ -14,7 +14,8 @@ SOURCES += sagraphicswindow.cpp \
     sagraphicslabelitem.cpp \
     sagraphicsbuttongroup.cpp \
     sacolorbutton.cpp \
-    sagraphicstoolbar.cpp
+    sagraphicstoolbar.cpp \
+    sagraphicsitemgroup.cpp
 HEADERS += ../include/sagraphicswindow.h \
     ../include/sagraphicstitlebarbutton.h \
     ../include/sagraphicsstackedlayout.h \
@@ -23,7 +24,8 @@ HEADERS += ../include/sagraphicswindow.h \
     ../include/sagraphicsbuttongroup.h \
     ../include/sadefineslib.h \
     ../include/sacolorbutton.h \
-    ../include/sagraphicstoolbar.h
+    ../include/sagraphicstoolbar.h \
+    ../include/sagraphicsitemgroup.h
 QMAKE_CLEAN = ../../lib/lib$${TARGET}.*
 unix {
     OBJECTS_DIR = .obj

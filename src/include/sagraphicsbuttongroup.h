@@ -1,6 +1,7 @@
 #ifndef KDGRAPHICSBUTTONGROUP_H
 #define KDGRAPHICSBUTTONGROUP_H
 
+#include <QGraphicsObject>
 #include <QGraphicsWidget>
 
 #include "sagraphicspushbutton.h"

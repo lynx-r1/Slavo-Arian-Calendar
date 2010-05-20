@@ -1,18 +1,23 @@
 #include <QColorDialog>
 #include <QCloseEvent>
+#include <QGraphicsItem>
+#include <QPropertyAnimation>
 #include <QGraphicsScene>
 #include <QMainWindow>
 #include <QPlastiqueStyle>
 #include <QPushButton>
 #include <QSettings>
 
+#include "sagraphicsitemgroup.h"
 #include "sacolorbutton.h"
 #include "sakalendarsettingsdialog.h"
 
-SAKSettingsDialog::SAKSettingsDialog(QMainWindow *mainWindow, QGraphicsScene *scene)
+SAKSettingsDialog::SAKSettingsDialog(QMainWindow *mainWindow, QGraphicsScene *scene,
+                                     SAGraphicsItemGroup *logo)
     : QDialog(mainWindow)
     , mMainWindow(mainWindow)
     , mScene(scene)
+    , mLogo(logo)
 {
     setupUi(this);
 }
@@ -25,6 +30,7 @@ void SAKSettingsDialog::showEvent(QShowEvent *e)
     mFullScreenCheckBox->setChecked(mMainWindow->isFullScreen());
     mSceneBackgroundPushButton->setColor(mScene->backgroundBrush().color());
     mEffectsCheckBox->setChecked(pluginEffects);
+    mShowLogoCheckBox->setChecked(mLogo->opacity() == 1);
 
     QDialog::showEvent(e);
     readSettings();
@@ -80,9 +86,17 @@ void SAKSettingsDialog::apply()
 
     mScene->setBackgroundBrush(mSceneBackgroundPushButton->color());
 
+    QPropertyAnimation *anim = new QPropertyAnimation(mLogo, "opacity");
+    anim->setDuration(1000);
+    anim->setEasingCurve(mShowLogoCheckBox->isChecked() ? QEasingCurve::OutExpo :
+                         QEasingCurve::Linear);
+    anim->setEndValue(mShowLogoCheckBox->isChecked());
+    anim->start(QAbstractAnimation::DeleteWhenStopped);
+
     s.beginGroup("/SAKalendar/SAKalendarApp");
     s.setValue("FullScreen", mFullScreenCheckBox->isChecked());
     s.setValue("PluginEffects", mEffectsCheckBox->isChecked());
     s.setValue("BackgroundColor", mScene->backgroundBrush().color());
+    s.setValue("ShowLogo", mShowLogoCheckBox->isChecked());
     s.endGroup();
 }

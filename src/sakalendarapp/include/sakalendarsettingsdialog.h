@@ -4,14 +4,18 @@
 #include "ui_sakalendarsettingsdialog.h"
 
 QT_FORWARD_DECLARE_CLASS(QMainWindow)
+QT_FORWARD_DECLARE_CLASS(QGraphicsItem)
 QT_FORWARD_DECLARE_CLASS(QGraphicsScene)
+
+QT_FORWARD_DECLARE_CLASS(SAGraphicsItemGroup)
 
 class SAKSettingsDialog : public QDialog, private Ui::SettingsDialog
 {
     Q_OBJECT
 
 public:
-    SAKSettingsDialog(QMainWindow *mainWindow, QGraphicsScene *scene);
+    SAKSettingsDialog(QMainWindow *mainWindow, QGraphicsScene *scene,
+                      SAGraphicsItemGroup *logo);
 
 protected:
     void showEvent(QShowEvent *);
@@ -30,6 +34,7 @@ private:
 private:
     QMainWindow *mMainWindow;
     QGraphicsScene *mScene;
+    SAGraphicsItemGroup *mLogo;
 };
 
 #endif // SAKALENDARSETTINGSDIALOG_H

@@ -16,6 +16,7 @@
 
 #include "sagraphicstoolbar.h"
 #include "sagraphicsbuttongroup.h"
+#include "sagraphicsitemgroup.h"
 
 #include "sakalendarsettingsdialog.h"
 #include "sakalendar.h"
@@ -214,12 +215,12 @@ void SAKalendar::createSAKalendarView()
 
     setCentralWidget(mSAKalendarView);
 
-    mSettingsDialog = new SAKSettingsDialog(this, mSAKalendarView->scene());
+    mSettingsDialog = new SAKSettingsDialog(this, mSAKalendarView->scene(), mKalyadnikLogo);
 }
 
 void SAKalendar::createKalyadnikLogo()
 {
-    mKalyadnikLogo = new QGraphicsItemGroup;
+    mKalyadnikLogo = new SAGraphicsItemGroup;
 
     QGraphicsDropShadowEffect *dropShadowName = new QGraphicsDropShadowEffect;
     dropShadowName->setOffset(2);
@@ -257,6 +258,9 @@ void SAKalendar::createKalyadnikLogo()
     mKalyadnikLogo->addToGroup(pixmap);
     mKalyadnikLogo->addToGroup(name);
     mKalyadnikLogo->addToGroup(slogan);
+
+    QSettings s;
+    mKalyadnikLogo->setOpacity(s.value("/SAKalendar/SAKalendarApp/ShowLogo", true).toBool());
 }
 
 void SAKalendar::setupConnections()
@@ -267,7 +271,8 @@ void SAKalendar::setupConnections()
 void SAKalendar::readSettings()
 {
     QSettings s;
-    QByteArray initGeometry = QByteArray::fromHex("01d9d0cb0001000000000000000000000000059f0000036000000002000000150000059d0000035e000000000200");
+    QByteArray initGeometry = QByteArray::fromHex("01d9d0cb0001000000000000000000000000059f00000"
+                                                  "36000000002000000150000059d0000035e000000000200");
     restoreGeometry(s.value("/SAKalendar/SAKalendarApp/Geometry", initGeometry).toByteArray());
 
     if (!mPluginsList.isEmpty()) {
@@ -327,7 +332,6 @@ void SAKalendar::readSettings()
 void SAKalendar::writeSettings()
 {
     QSettings s;
-    qDebug() << saveGeometry().toHex();
     s.setValue("/SAKalendar/SAKalendarApp/Geometry", saveGeometry());
 
     foreach (QGraphicsWidget *widget, mPluginsList) {

@@ -13,6 +13,7 @@ QT_FORWARD_DECLARE_CLASS(QState)
 QT_FORWARD_DECLARE_CLASS(QStateMachine)
 QT_FORWARD_DECLARE_CLASS(QTextEdit)
 
+QT_FORWARD_DECLARE_CLASS(SAGraphicsItemGroup)
 QT_FORWARD_DECLARE_CLASS(SAGraphicsPushButton)
 QT_FORWARD_DECLARE_CLASS(SAGraphicsToolBar)
 QT_FORWARD_DECLARE_CLASS(SAKSettingsDialog)
@@ -60,7 +61,7 @@ private:
     QStringList mPluginNames;
     QList<QGraphicsWidget *> mPluginsList;
 
-    QGraphicsItemGroup *mKalyadnikLogo;
+    SAGraphicsItemGroup *mKalyadnikLogo;
 
     QStateMachine *mStateMachine;
     QState *mGroupStates;
