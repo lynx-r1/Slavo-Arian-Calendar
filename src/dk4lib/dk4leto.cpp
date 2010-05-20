@@ -16,7 +16,7 @@ DK4Leto::DK4Leto()
 {
     initToolTips();
     setCheckable(true);
-    setJump(1);
+    setJump(1.4);
 }
 
 DK4Leto::DK4Leto(int nomerLeta, int denNedeliNovoletiya, int krugLet, int stikhiyaICvet, int nachalo)
@@ -30,7 +30,7 @@ DK4Leto::DK4Leto(int nomerLeta, int denNedeliNovoletiya, int krugLet, int stikhi
 {
     initToolTips();
     setCheckable(true);
-    setJump(1);
+    setJump(1.4);
 }
 
 DK4Leto *DK4Leto::clone(int nomerLeta, int denNedeliNovoletiya, int krugLet, int stikhiyaICvet, int nachalo)
