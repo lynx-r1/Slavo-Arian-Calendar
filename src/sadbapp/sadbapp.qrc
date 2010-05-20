@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/SAKalendar/SADBApp">
+        <file>images/icons/next.png</file>
+        <file>images/icons/prev.png</file>
+        <file>fonts/IzhitsaC.ttf</file>
+        <file>images/icons/sadatabase.png</file>
+    </qresource>
+</RCC>

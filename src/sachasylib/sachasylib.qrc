@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/SAKalendar/sachasylib">
+        <file>images/1paobed.png</file>
+        <file>images/2vecher.png</file>
+        <file>images/3nich.png</file>
+        <file>images/4polich.png</file>
+        <file>images/5zautra.png</file>
+        <file>images/6zaura.png</file>
+        <file>images/7zaurnice.png</file>
+        <file>images/8nastya.png</file>
+        <file>images/9swaor.png</file>
+        <file>images/10utros.png</file>
+        <file>images/11poutros.png</file>
+        <file>images/12obestina.png</file>
+        <file>images/13obed.png</file>
+        <file>images/14podani.png</file>
+        <file>images/15utdayini.png</file>
+        <file>images/16poudani.png</file>
+    </qresource>
+</RCC>

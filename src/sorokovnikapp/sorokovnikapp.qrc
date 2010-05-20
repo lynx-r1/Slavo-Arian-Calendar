@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/SAKalendar/SorokovnikApp">
+        <file>fonts/IzhitsaC.ttf</file>
+        <file>images/icons/sorokovnik.png</file>
+    </qresource>
+</RCC>

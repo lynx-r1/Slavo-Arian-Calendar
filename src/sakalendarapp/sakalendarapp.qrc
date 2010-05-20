@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/SAKalendar/SAKalendarApp">
+        <file>images/icons/sorokovnik.png</file>
+        <file>images/icons/settings.png</file>
+        <file>fonts/IzhitsaC.ttf</file>
+        <file>images/icons/kalyadnik.png</file>
+        <file>images/icons/power.png</file>
+        <file>images/icons/dk4.png</file>
+        <file>images/icons/sachasy.png</file>
+        <file>images/icons/ranged.png</file>
+    </qresource>
+</RCC>

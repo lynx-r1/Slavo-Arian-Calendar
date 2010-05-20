@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/SAKalendar/SAChasyApp">
+        <file>fonts/IzhitsaC.ttf</file>
+        <file>images/icons/sachasy.png</file>
+    </qresource>
+</RCC>

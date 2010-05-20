@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/SAKalendar/sorokovniklib">
+        <file>images/next.png</file>
+        <file>images/nextnext.png</file>
+        <file>images/prev.png</file>
+        <file>images/prevprev.png</file>
+    </qresource>
+</RCC>

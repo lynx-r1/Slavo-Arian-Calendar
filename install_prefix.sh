@@ -1,0 +1,1 @@
+export SAKALENDAR_INSTALL_PREFIX_UNIX=$HOME/Soft/sakalendar
