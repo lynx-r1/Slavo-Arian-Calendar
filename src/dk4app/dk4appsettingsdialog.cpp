@@ -99,13 +99,11 @@ void DK4AppSettingsDialog::shadowColorPushButton_clicked()
 void DK4AppSettingsDialog::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/DK4AppSettingsDialog/size").toSize());
-    move(s.value("/SAKalendar/DK4AppSettingsDialog/pos").toPoint());
+    restoreGeometry(s.value("/SAKalendar/DK4AppSettingsDialog/Geometry").toByteArray());
 }
 
 void DK4AppSettingsDialog::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/DK4AppSettingsDialog/size", size());
-    s.setValue("/SAKalendar/DK4AppSettingsDialog/pos", pos());
+    s.setValue("/SAKalendar/DK4AppSettingsDialog/Geometry", saveGeometry());
 }

@@ -195,16 +195,16 @@ void SorokovnikApp::showPrazdnikInfo(bool show, const QString &info)
 void SorokovnikApp::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/SorokovnikApp/size").toSize());
-    move(s.value("/SAKalendar/SorokovnikApp/pos").toPoint());
+    restoreGeometry(s.value("/SAKalendar/SorokovnikApp/Geometry").toByteArray());
+    restoreState(s.value("/SAKalendar/SorokovnikApp/State").toByteArray());
     mTabWidget->setCurrentIndex(s.value("/SAKalendar/SorokovnikApp/tab").toInt());
 }
 
 void SorokovnikApp::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/SorokovnikApp/size", size());
-    s.setValue("/SAKalendar/SorokovnikApp/pos", pos());
+    s.setValue("/SAKalendar/SorokovnikApp/Geometry", saveGeometry());
+    s.setValue("/SAKalendar/SorokovnikApp/State", saveState());
     s.setValue("/SAKalendar/SorokovnikApp/tab", mTabWidget->currentIndex());
 }
 

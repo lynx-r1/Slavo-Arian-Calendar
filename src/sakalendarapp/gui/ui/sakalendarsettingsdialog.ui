@@ -17,7 +17,7 @@
    <item>
     <widget class="QCheckBox" name="mFullScreenCheckBox">
      <property name="text">
-      <string>Вовесь экран</string>
+      <string>Во весь экран</string>
      </property>
     </widget>
    </item>

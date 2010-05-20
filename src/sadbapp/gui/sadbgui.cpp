@@ -442,16 +442,14 @@ void SADBGui::on_mDK4PopulateDBPushButton_clicked()
 void SADBGui::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/SADBApp/size").toSize());
-    move(s.value("/SAKalendar/SADBApp/pos").toPoint());
+    restoreGeometry(s.value("/SAKalendar/SADBApp/Geometry").toByteArray());
     mTabWidget->setCurrentIndex(s.value("/SAKalendar/SADBApp/tab").toInt());
 }
 
 void SADBGui::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/SADBApp/size", size());
-    s.setValue("/SAKalendar/SADBApp/pos", pos());
+    s.setValue("/SAKalendar/SADBApp/Geometry", saveGeometry());
     s.setValue("/SAKalendar/SADBApp/tab", mTabWidget->currentIndex());
 }
 

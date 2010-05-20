@@ -94,13 +94,11 @@ void SorokovnikAppSettingsDialog::shadowColorPushButton_clicked()
 void SorokovnikAppSettingsDialog::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/SorokovnikAppSettingsDialog/size").toSize());
-    move(s.value("/SAKalendar/SorokovnikAppSettingsDialog/pos").toPoint());
+    restoreGeometry(s.value("/SAKalendar/SorokovnikAppSettingsDialog/Geometry").toByteArray());
 }
 
 void SorokovnikAppSettingsDialog::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/SorokovnikAppSettingsDialog/size", size());
-    s.setValue("/SAKalendar/SorokovnikAppSettingsDialog/pos", pos());
+    s.setValue("/SAKalendar/SorokovnikAppSettingsDialog/Geometry", saveGeometry());
 }

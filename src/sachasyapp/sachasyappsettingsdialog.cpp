@@ -82,17 +82,14 @@ void SAChasyAppSettingsDialog::shadowColorPushButton_clicked()
 void SAChasyAppSettingsDialog::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/SAChasyAppSettingsDialog/size").toSize());
-    move(s.value("/SAKalendar/SAChasyAppSettingsDialog/pos").toPoint());
-
+    restoreGeometry(s.value("/SAKalendar/SAChasyAppSettingsDialog/Geometry").toByteArray());
     mWindowStaysOnTopCheckBox->setChecked(s.value("/SAKalendar/SAChasyApp/StayOnTop", false).toBool());
 }
 
 void SAChasyAppSettingsDialog::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/SAChasyAppSettingsDialog/size", size());
-    s.setValue("/SAKalendar/SAChasyAppSettingsDialog/pos", pos());
+    s.setValue("/SAKalendar/SAChasyAppSettingsDialog/Geometry", saveGeometry());
 }
 
 void SAChasyAppSettingsDialog::apply()

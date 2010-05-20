@@ -1,6 +1,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QBitmap>
+#include <QDesktopWidget>
 #include <QGraphicsDropShadowEffect>
 #include <QGraphicsLinearLayout>
 #include <QGraphicsProxyWidget>
@@ -36,9 +37,9 @@ SAChasyApp::SAChasyApp(QWidget *parent)
 //    p.setColor(QPalette::Base, Qt::transparent);
 //    viewport()->setPalette(p);
 
-    readSettings();
     createSAChasy();
     createActions();
+    readSettings();
 }
 
 void SAChasyApp::mouseMoveEvent(QMouseEvent *e)
@@ -100,7 +101,8 @@ void SAChasyApp::showAbout()
 void SAChasyApp::readSettings()
 {
     QSettings s;
-    move(s.value("/SAKalendar/SAChasyApp/pos", QPoint(0, 0)).toPoint());
+    QPoint screenCenter = qApp->desktop()->screenGeometry().center() - rect().center();
+    move(s.value("/SAKalendar/SAChasyApp/pos", screenCenter).toPoint());
 }
 
 void SAChasyApp::writeSettings()

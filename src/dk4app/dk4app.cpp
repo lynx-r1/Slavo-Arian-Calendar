@@ -87,15 +87,15 @@ void DK4App::kzhizniSelected(int lvkzhizni)
 void DK4App::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/DK4App/size").toSize());
-    move(s.value("/SAKalendar/DK4App/pos").toPoint());
+    restoreGeometry(s.value("/SAKalendar/DK4App/Geometry").toByteArray());
+    restoreState(s.value("/SAKalendar/DK4App/State").toByteArray());
 }
 
 void DK4App::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/DK4App/size", size());
-    s.setValue("/SAKalendar/DK4App/pos", pos());
+    s.setValue("/SAKalendar/DK4App/Geometry", saveGeometry());
+    s.setValue("/SAKalendar/DK4App/State", saveState());
 }
 
 void DK4App::createDK4()

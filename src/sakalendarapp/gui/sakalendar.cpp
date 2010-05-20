@@ -1,5 +1,4 @@
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QGraphicsEffect>
 #include <QGraphicsView>
 #include <QGraphicsWidget>
@@ -268,17 +267,8 @@ void SAKalendar::setupConnections()
 void SAKalendar::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/SAKalendarApp/size", qApp->desktop()->size()).toSize());
-    move(s.value("/SAKalendar/SAKalendarApp/pos").toPoint());
-    restoreState(s.value("/SAKalendar/SAKalendarApp/state").toByteArray());
-    bool fullScreen = s.value("/SAKalendar/SAKalendarApp/FullScreen", false).toBool();
-    if (fullScreen) {
-        showFullScreen();
-        activateWindow();
-        raise();
-    } else {
-        showNormal();
-    }
+    QByteArray initGeometry = QByteArray::fromHex("01d9d0cb0001000000000000000000000000059f0000036000000002000000150000059d0000035e000000000200");
+    restoreGeometry(s.value("/SAKalendar/SAKalendarApp/Geometry", initGeometry).toByteArray());
 
     if (!mPluginsList.isEmpty()) {
         int i = 0;
@@ -337,9 +327,8 @@ void SAKalendar::readSettings()
 void SAKalendar::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/SAKalendarApp/size", size());
-    s.setValue("/SAKalendar/SAKalendarApp/pos", pos());
-    s.setValue("/SAKalendar/SAKalendarApp/state", saveState());
+    qDebug() << saveGeometry().toHex();
+    s.setValue("/SAKalendar/SAKalendarApp/Geometry", saveGeometry());
 
     foreach (QGraphicsWidget *widget, mPluginsList) {
         s.setValue(QString("/SAKalendar/SAKalendarApp/%1/scenePos")

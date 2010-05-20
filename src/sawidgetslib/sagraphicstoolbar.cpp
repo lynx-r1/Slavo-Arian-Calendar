@@ -81,15 +81,18 @@ void SAGraphicsToolBar::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 void SAGraphicsToolBar::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     if (opacity() == 0.1) {
-        int duration = 500;
+        int duration = 1000;
+        QEasingCurve curve(QEasingCurve::OutExpo);
         QParallelAnimationGroup *group = new QParallelAnimationGroup;
         QPropertyAnimation *animOpcity = new QPropertyAnimation(this, "opacity", group);
         animOpcity->setDuration(duration);
+        animOpcity->setEasingCurve(curve);
         animOpcity->setEndValue(1);
 
         if (mBlurEffect->blurRadius() == 9) {
             QPropertyAnimation *animBlur = new QPropertyAnimation(mBlurEffect, "blurRadius", group);
             animBlur->setDuration(duration);
+            animBlur->setEasingCurve(curve);
             animBlur->setEndValue(0);
         }
 
@@ -102,14 +105,17 @@ void SAGraphicsToolBar::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 void SAGraphicsToolBar::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     if (opacity() == 1) {
-        int duration = 500;
+        int duration = 1000;
+        QEasingCurve curve(QEasingCurve::InExpo);
         QParallelAnimationGroup *group = new QParallelAnimationGroup;
         QPropertyAnimation *animOpcity = new QPropertyAnimation(this, "opacity", group);
         animOpcity->setDuration(duration);
+        animOpcity->setEasingCurve(curve);
         animOpcity->setEndValue(0.1);
 
         QPropertyAnimation *animBlur = new QPropertyAnimation(mBlurEffect, "blurRadius", group);
         animBlur->setDuration(duration);
+        animBlur->setEasingCurve(curve);
         animBlur->setEndValue(9);
 
         group->start(QAbstractAnimation::DeleteWhenStopped);

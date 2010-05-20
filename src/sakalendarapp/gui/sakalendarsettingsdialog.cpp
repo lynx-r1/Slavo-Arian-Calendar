@@ -60,28 +60,29 @@ void SAKSettingsDialog::on_mSceneBackgroundPushButton_clicked()
 void SAKSettingsDialog::readSettings()
 {
     QSettings s;
-    resize(s.value("/SAKalendar/SAKalendarSettingsDialog/size").toSize());
-    move(s.value("/SAKalendar/SAKalendarSettingsDialog/pos").toPoint());
+    restoreGeometry(s.value("/SAKalendar/SAKalendarSettingsDialog/Geometry").toByteArray());
 }
 
 void SAKSettingsDialog::writeSettings()
 {
     QSettings s;
-    s.setValue("/SAKalendar/SAKalendarSettingsDialog/size", size());
-    s.setValue("/SAKalendar/SAKalendarSettingsDialog/pos", pos());
+    s.setValue("/SAKalendar/SAKalendarSettubgsDialog/Geometry", saveGeometry());
 }
 
 void SAKSettingsDialog::apply()
 {
-    if (mFullScreenCheckBox->isChecked())
+    QSettings s;
+    if (mFullScreenCheckBox->isChecked()) {
         mMainWindow->showFullScreen();
-    else
+    } else if (mMainWindow->isFullScreen()) {
         mMainWindow->showNormal();
+    }
 
     mScene->setBackgroundBrush(mSceneBackgroundPushButton->color());
 
-    QSettings s;
-    s.setValue("/SAKalendar/SAKalendarApp/FullScreen", mFullScreenCheckBox->isChecked());
-    s.setValue("/SAKalendar/SAKalendarApp/PluginEffects", mEffectsCheckBox->isChecked());
-    s.setValue("/SAKalendar/SAKalendarApp/BackgroundColor", mScene->backgroundBrush().color());
+    s.beginGroup("/SAKalendar/SAKalendarApp");
+    s.setValue("FullScreen", mFullScreenCheckBox->isChecked());
+    s.setValue("PluginEffects", mEffectsCheckBox->isChecked());
+    s.setValue("BackgroundColor", mScene->backgroundBrush().color());
+    s.endGroup();
 }
