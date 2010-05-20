@@ -9,14 +9,17 @@
 #include <QSettings>
 
 #include "sagraphicsitemgroup.h"
+#include "sagraphicstoolbar.h"
 #include "sacolorbutton.h"
+
 #include "sakalendarsettingsdialog.h"
 
 SAKSettingsDialog::SAKSettingsDialog(QMainWindow *mainWindow, QGraphicsScene *scene,
-                                     SAGraphicsItemGroup *logo)
+                                     SAGraphicsToolBar *mainToolBar, SAGraphicsItemGroup *logo)
     : QDialog(mainWindow)
     , mMainWindow(mainWindow)
     , mScene(scene)
+    , mMainToolBar(mainToolBar)
     , mLogo(logo)
 {
     setupUi(this);
@@ -31,6 +34,7 @@ void SAKSettingsDialog::showEvent(QShowEvent *e)
     mSceneBackgroundPushButton->setColor(mScene->backgroundBrush().color());
     mEffectsCheckBox->setChecked(pluginEffects);
     mShowLogoCheckBox->setChecked(mLogo->opacity() == 1);
+    mHideMainToolBarCheckBox->setChecked(mMainToolBar->hideOnHoverLeave());
 
     QDialog::showEvent(e);
     readSettings();
@@ -85,6 +89,7 @@ void SAKSettingsDialog::apply()
     }
 
     mScene->setBackgroundBrush(mSceneBackgroundPushButton->color());
+    mMainToolBar->setHideOnHoverLeave(mHideMainToolBarCheckBox->isChecked());
 
     QPropertyAnimation *anim = new QPropertyAnimation(mLogo, "opacity");
     anim->setDuration(1000);
@@ -98,5 +103,6 @@ void SAKSettingsDialog::apply()
     s.setValue("PluginEffects", mEffectsCheckBox->isChecked());
     s.setValue("BackgroundColor", mScene->backgroundBrush().color());
     s.setValue("ShowLogo", mShowLogoCheckBox->isChecked());
+    s.setValue("HideMainToolBar", mHideMainToolBarCheckBox->isChecked());
     s.endGroup();
 }

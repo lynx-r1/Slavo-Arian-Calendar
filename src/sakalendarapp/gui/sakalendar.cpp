@@ -21,15 +21,17 @@
 #include "sakalendarsettingsdialog.h"
 #include "sakalendar.h"
 
+const QSize ToolButtonSize = QSize(48, 48);
+
 SAKalendar::SAKalendar(QWidget *parent)
     : QMainWindow(parent)
     , mSAKalendarView(0)
-    , mToolBar(new SAGraphicsToolBar)
+    , mMainToolBar(new SAGraphicsToolBar)
     , mDertyWidgetPos(false)
 {
     setupUi(this);
 
-    mToolBar->setOrientation(Qt::Vertical);
+    mMainToolBar->setOrientation(Qt::Vertical);
 
     setWindowIcon(QIcon(":/SAKalendar/SAKalendarApp/images/icons/kalyadnik.png"));
 
@@ -118,14 +120,14 @@ void SAKalendar::updateStaticItemsPos(const QRectF &rect)
 {
     int center = rect.width() / 2 - mKalyadnikLogo->boundingRect().width() / 2;
     mKalyadnikLogo->setPos(rect.topLeft() + QPointF(center, 2));
-    mToolBar->setPos(rect.topLeft() + QPointF(4, 4));
+    mMainToolBar->setPos(rect.topLeft() + QPointF(4, 4));
 }
 
 void SAKalendar::resetItemPos()
 {
     if (mDertyWidgetPos && !mPluginsList.isEmpty()) {
         int i = 0;
-        int pluginWidth = mToolBar->preferredWidth();
+        int pluginWidth = mMainToolBar->preferredWidth();
         QParallelAnimationGroup *group = new QParallelAnimationGroup;
         foreach (QGraphicsWidget *widget, mPluginsList) {
             int floatY = height() / 2 - widget->preferredHeight() / 2;
@@ -160,36 +162,43 @@ void SAKalendar::createToolBar()
 {
     QColor buttonColor(200, 200, 255, 127);
     mRangeWidgetButton = new SAGraphicsPushButton;
+    mRangeWidgetButton->setFixedSize(ToolButtonSize);
     mRangeWidgetButton->setBackgroundColor(buttonColor);
     mRangeWidgetButton->setToolTip(tr("Начальное расположение"));
     mRangeWidgetButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/ranged.png"));
     connect(mRangeWidgetButton, SIGNAL(clicked()), this, SLOT(resetItemPos()));
 
     mSettingsButton = new SAGraphicsPushButton;
+    mSettingsButton->setFixedSize(ToolButtonSize);
     mSettingsButton->setBackgroundColor(buttonColor);
     mSettingsButton->setToolTip(tr("Настройки"));
     mSettingsButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/settings.png"));
     connect(mSettingsButton, SIGNAL(clicked()), mSettingsDialog, SLOT(show()));
 
     mAboutButton = new SAGraphicsPushButton;
+    mAboutButton->setFixedSize(ToolButtonSize);
     mAboutButton->setBackgroundColor(buttonColor);
     mAboutButton->setToolTip(tr("О программе"));
     mAboutButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/kalyadnik.png"));
     connect(mAboutButton, SIGNAL(clicked()), this, SLOT(showAbout()));
 
     mQuitButton = new SAGraphicsPushButton;
+    mQuitButton->setFixedSize(ToolButtonSize);
     mQuitButton->setBackgroundColor(buttonColor);
     mQuitButton->setToolTip(tr("Выход"));
     mQuitButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/power.png"));
     connect(mQuitButton, SIGNAL(clicked()), this, SLOT(close()));
 
-    mToolBar->addSeparator();
-    mToolBar->addWidget(mRangeWidgetButton);
-    mToolBar->addSeparator();
-    mToolBar->addWidget(mSettingsButton);
-    mToolBar->addWidget(mAboutButton);
-    mToolBar->addSeparator();
-    mToolBar->addWidget(mQuitButton);
+    QSettings s;
+    mMainToolBar->setHideOnHoverLeave(s.value("/SAKalendar/SAKalendarApp/HideMainToolBar", true).toBool());
+
+    mMainToolBar->addSeparator();
+    mMainToolBar->addWidget(mRangeWidgetButton);
+    mMainToolBar->addSeparator();
+    mMainToolBar->addWidget(mSettingsButton);
+    mMainToolBar->addWidget(mAboutButton);
+    mMainToolBar->addSeparator();
+    mMainToolBar->addWidget(mQuitButton);
 }
 
 void SAKalendar::createSAKalendarView()
@@ -202,7 +211,7 @@ void SAKalendar::createSAKalendarView()
     mSAKalendarScene->setItemIndexMethod(QGraphicsScene::NoIndex);
     mSAKalendarScene->setBackgroundBrush(sceneBackgroundColor);
     mSAKalendarScene->addItem(mKalyadnikLogo);
-    mSAKalendarScene->addItem(mToolBar);
+    mSAKalendarScene->addItem(mMainToolBar);
 
     mSAKalendarView = new QGraphicsView(mSAKalendarScene, this);
     mSAKalendarView->setAlignment(Qt::AlignCenter);
@@ -215,7 +224,7 @@ void SAKalendar::createSAKalendarView()
 
     setCentralWidget(mSAKalendarView);
 
-    mSettingsDialog = new SAKSettingsDialog(this, mSAKalendarView->scene(), mKalyadnikLogo);
+    mSettingsDialog = new SAKSettingsDialog(this, mSAKalendarView->scene(), mMainToolBar, mKalyadnikLogo);
 }
 
 void SAKalendar::createKalyadnikLogo()
@@ -277,7 +286,7 @@ void SAKalendar::readSettings()
 
     if (!mPluginsList.isEmpty()) {
         int i = 0;
-        int pluginWidth = mToolBar->preferredWidth();
+        int pluginWidth = mMainToolBar->preferredWidth();
         QParallelAnimationGroup *group = new QParallelAnimationGroup;
         foreach (QGraphicsWidget *widget, mPluginsList) {
             int floatY = height() / 2 - widget->preferredHeight() / 2;
@@ -418,6 +427,7 @@ void SAKalendar::addPlugin(QGraphicsWidget *plugin, const QPixmap &pixmap,
 
     QColor buttonColor(255, 200, 200, 127);
     SAGraphicsPushButton *pbn = new SAGraphicsPushButton;
+    pbn->setFixedSize(ToolButtonSize);
     pbn->setObjectName(plugin->objectName() + "Widget");
     pbn->setCheckable(true);
     pbn->setChecked(true);
@@ -426,5 +436,5 @@ void SAKalendar::addPlugin(QGraphicsWidget *plugin, const QPixmap &pixmap,
     pbn->setPixmap(pixmap);
     connect(pbn, SIGNAL(clicked(bool)), this, SLOT(toggleVisiblePlugin(bool)));
 
-    mToolBar->addWidget(pbn);
+    mMainToolBar->addWidget(pbn);
 }

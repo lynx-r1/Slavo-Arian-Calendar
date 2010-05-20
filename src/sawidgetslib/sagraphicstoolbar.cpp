@@ -40,6 +40,7 @@ SAGraphicsToolBar::SAGraphicsToolBar(const QColor &color, QGraphicsWidget *paren
     : QGraphicsWidget(parent)
     , mLayout(new QGraphicsLinearLayout(this))
     , mColor(color)
+    , mHideOnHoverLeave(false)
 {
     mBlurEffect = new QGraphicsBlurEffect;
     mBlurEffect->setBlurRadius(0);
@@ -104,7 +105,7 @@ void SAGraphicsToolBar::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 
 void SAGraphicsToolBar::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    if (opacity() == 1) {
+    if (opacity() == 1 && mHideOnHoverLeave) {
         int duration = 1000;
         QEasingCurve curve(QEasingCurve::InExpo);
         QParallelAnimationGroup *group = new QParallelAnimationGroup;

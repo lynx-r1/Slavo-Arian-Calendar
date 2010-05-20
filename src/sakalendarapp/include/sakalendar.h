@@ -66,7 +66,7 @@ private:
     QStateMachine *mStateMachine;
     QState *mGroupStates;
 
-    SAGraphicsToolBar *mToolBar;
+    SAGraphicsToolBar *mMainToolBar;
     SAGraphicsPushButton *mRangeWidgetButton;
     SAGraphicsPushButton *mSettingsButton;
     SAGraphicsPushButton *mAboutButton;

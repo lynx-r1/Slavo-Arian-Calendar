@@ -437,7 +437,11 @@ QSqlDatabase SorokovnikDB::openPrazdnikiDb(const QString &name, const QString &c
         db.setDatabaseName(name);
 
         QString errorMessage = tr("Не удалось открыть базу данных праздников, либо база данных пуста "
-                                  "(для создания и заполнения базы данных праздников воспользуйтесь приложением <b>sadb</b>).<br>"
+#if defined(Q_OS_UNIX)
+                                  "(для создания и заполнения базы данных праздников воспользуйтесь приложением sadb).<br>"
+#elif defined(Q_OS_WIN)
+                                  "(для создания и заполнения базы данных праздников воспользуйтесь приложением sadb.exe).<br>"
+#endif
                                   "Описания праздников будут недоступны.");
         if (!db.open()) {
             qCritical() << tr("Не удалось открыть базу данных") << db.lastError();

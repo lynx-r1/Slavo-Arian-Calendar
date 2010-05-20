@@ -8,6 +8,7 @@ QT_FORWARD_DECLARE_CLASS(QGraphicsItem)
 QT_FORWARD_DECLARE_CLASS(QGraphicsScene)
 
 QT_FORWARD_DECLARE_CLASS(SAGraphicsItemGroup)
+QT_FORWARD_DECLARE_CLASS(SAGraphicsToolBar)
 
 class SAKSettingsDialog : public QDialog, private Ui::SettingsDialog
 {
@@ -15,7 +16,7 @@ class SAKSettingsDialog : public QDialog, private Ui::SettingsDialog
 
 public:
     SAKSettingsDialog(QMainWindow *mainWindow, QGraphicsScene *scene,
-                      SAGraphicsItemGroup *logo);
+                      SAGraphicsToolBar *mainToolBar, SAGraphicsItemGroup *logo);
 
 protected:
     void showEvent(QShowEvent *);
@@ -34,6 +35,8 @@ private:
 private:
     QMainWindow *mMainWindow;
     QGraphicsScene *mScene;
+
+    SAGraphicsToolBar *mMainToolBar;
     SAGraphicsItemGroup *mLogo;
 };
 

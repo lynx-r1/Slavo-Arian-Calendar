@@ -249,7 +249,11 @@ QSqlDatabase DK4DB::openOpisanieLetDb(const QString &name, const QString &connec
         db.setDatabaseName(name);
 
         QString errorMessage = tr("Не удалось открыть базу данных описаний лет, либо база данных пуста "
-                                  "(для создания и заполнения базы данных описаний лет воспользуйтесь приложением <b>sadb</b>).<br>"
+#if defined(Q_OS_UNIX)
+                                  "(для создания и заполнения базы данных описаний лет воспользуйтесь приложением sadb).<br>"
+#elif defined(Q_OS_WIN)
+                                  "(для создания и заполнения базы данных описаний лет воспользуйтесь приложением sadb.exe).<br>"
+#endif
                                   "Описания лет будут недоступны.");
         if (!db.open()) {
             qCritical() << tr("Не удалось открыть базу данных") << db.lastError();

@@ -23,6 +23,9 @@ public:
         update();
     }
 
+    inline bool hideOnHoverLeave() const { return mHideOnHoverLeave; }
+    inline void setHideOnHoverLeave(bool hide) { mHideOnHoverLeave = hide; }
+
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                QWidget *widget = 0);
 
@@ -55,6 +58,8 @@ private:
     QList<QGraphicsWidget *> mWidgets;
     QGraphicsLinearLayout *mLayout;
     QColor mColor;
+
+    bool mHideOnHoverLeave;
 };
 
 #endif // SAGRAPHICSTOOLBAR_H
