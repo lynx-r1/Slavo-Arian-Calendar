@@ -1,0 +1,455 @@
+<!DOCTYPE QtCreatorProject>
+<qtcreator>
+ <data>
+  <variable>RunConfiguration0-Arguments</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration0-BaseEnvironmentBase</variable>
+  <value type="int">2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-Executable</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-RunConfiguration.name</variable>
+  <value type="QString">Custom Executable</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UseTerminal</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserName</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-UserSetName</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-WorkingDirectory</variable>
+  <value type="QString">$BUILDDIR</value>
+ </data>
+ <data>
+  <variable>RunConfiguration0-type</variable>
+  <value type="QString">ProjectExplorer.CustomExecutableRunConfiguration</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-BaseEnvironmentBase</variable>
+  <value type="int">2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-CommandLineArguments</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration1-ProFile</variable>
+  <value type="QString">src/dk4app/dk4app.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-RunConfiguration.name</variable>
+  <value type="QString">dk4app</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-UseDyldImageSuffix</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-UseTerminal</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration1-UserSetName</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-UserSetWorkingDirectory</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-UserWorkingDirectory</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration1-type</variable>
+  <value type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-BaseEnvironmentBase</variable>
+  <value type="int">2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-CommandLineArguments</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration2-ProFile</variable>
+  <value type="QString">src/sachasyapp/sachasyapp.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-RunConfiguration.name</variable>
+  <value type="QString">sachasyapp</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-UseDyldImageSuffix</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-UseTerminal</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration2-UserSetName</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-UserSetWorkingDirectory</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-UserWorkingDirectory</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration2-type</variable>
+  <value type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-BaseEnvironmentBase</variable>
+  <value type="int">2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-CommandLineArguments</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration3-ProFile</variable>
+  <value type="QString">src/sadbapp/app/app.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-RunConfiguration.name</variable>
+  <value type="QString">app</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-UseDyldImageSuffix</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-UseTerminal</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration3-UserSetName</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-UserSetWorkingDirectory</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-UserWorkingDirectory</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration3-type</variable>
+  <value type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-BaseEnvironmentBase</variable>
+  <value type="int">2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-CommandLineArguments</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration4-ProFile</variable>
+  <value type="QString">src/sakalendarapp/app/app.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-RunConfiguration.name</variable>
+  <value type="QString">app</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-UseDyldImageSuffix</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-UseTerminal</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration4-UserSetName</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-UserSetWorkingDirectory</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-UserWorkingDirectory</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration4-type</variable>
+  <value type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-BaseEnvironmentBase</variable>
+  <value type="int">2</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-CommandLineArguments</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration5-ProFile</variable>
+  <value type="QString">src/sorokovnikapp/sorokovnikapp.pro</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-RunConfiguration.name</variable>
+  <value type="QString">sorokovnikapp</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-UseDyldImageSuffix</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-UseTerminal</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-UserEnvironmentChanges</variable>
+  <valuelist type="QVariantList"/>
+ </data>
+ <data>
+  <variable>RunConfiguration5-UserSetName</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-UserSetWorkingDirectory</variable>
+  <value type="bool">false</value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-UserWorkingDirectory</variable>
+  <value type="QString"></value>
+ </data>
+ <data>
+  <variable>RunConfiguration5-type</variable>
+  <value type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
+ </data>
+ <data>
+  <variable>activeRunConfiguration</variable>
+  <value type="int">0</value>
+ </data>
+ <data>
+  <variable>activebuildconfiguration</variable>
+  <value type="QString">Release</value>
+ </data>
+ <data>
+  <variable>buildConfiguration-Release</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <value key="QtVersionId" type="int">5</value>
+   <value key="ToolChain" type="int">2</value>
+   <value key="buildConfiguration" type="int">0</value>
+   <valuelist key="userEnvironmentChanges" type="QVariantList">
+    <value type="QString">SAKALENDAR_INSTALL_PREFIX_WIN="${HOMEDRIVE}${HOMEPATH}\Soft\SAKalendar"</value>
+   </valuelist>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">ALLUSERSPROFILE=C:\Documents and Settings\All Users</value>
+    <value type="QString">APPDATA=C:\Documents and Settings\Jack\Application Data</value>
+    <value type="QString">BASEMAKE=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Include\BKOffice.Mak</value>
+    <value type="QString">BKOFFICE=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">COMMONPROGRAMFILES=C:\Program Files\Common Files</value>
+    <value type="QString">COMPUTERNAME=WINDA</value>
+    <value type="QString">COMSPEC=C:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString">FP_NO_HOST_CHECK=NO</value>
+    <value type="QString">HOMEDRIVE=C:</value>
+    <value type="QString">HOMEPATH=\Documents and Settings\Jack</value>
+    <value type="QString">INCLUDE=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Include\.;C:\OSGeo4W\include;C:\MinGW\include</value>
+    <value type="QString">INETSDK=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">LANG=en</value>
+    <value type="QString">LIB=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Lib\.</value>
+    <value type="QString">LIB_DIR=C:\OSGeo4W\lib</value>
+    <value type="QString">LOGONSERVER=\\WINDA</value>
+    <value type="QString">MSSDK=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">MSTOOLS=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">NUMBER_OF_PROCESSORS=1</value>
+    <value type="QString">OS=Windows_NT</value>
+    <value type="QString">PATH=C:\Qt\2010.02.1\mingw\bin;C:\Qt\2010.02.1\qt\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\.;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\WinNT\.;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\.;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\WinNT\.;C:\Program Files\Microsoft Visual Studio 9.0\VC\bin;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE;C:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools;C:\Program Files\svn\bin;C:\Program Files\CMake 2.6\bin;</value>
+    <value type="QString">PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH</value>
+    <value type="QString">PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString">PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 6, GenuineIntel</value>
+    <value type="QString">PROCESSOR_LEVEL=6</value>
+    <value type="QString">PROCESSOR_REVISION=0f06</value>
+    <value type="QString">PROGRAMFILES=C:\Program Files</value>
+    <value type="QString">QSPECMAKE=win32-g++</value>
+    <value type="QString">QTDIR=C:/Qt/2010.02.1/qt</value>
+    <value type="QString">SAKALENDAR_INSTALL_PREFIX_WIN="C:\Documents and Settings\Jack\Soft\SAKalendar"</value>
+    <value type="QString">SYSTEMDRIVE=C:</value>
+    <value type="QString">SYSTEMROOT=C:\WINDOWS</value>
+    <value type="QString">TEMP=C:\DOCUME~1\Jack\LOCALS~1\Temp</value>
+    <value type="QString">TMP=C:\DOCUME~1\Jack\LOCALS~1\Temp</value>
+    <value type="QString">USERDOMAIN=WINDA</value>
+    <value type="QString">USERNAME=Jack</value>
+    <value type="QString">USERPROFILE=C:\Documents and Settings\Jack</value>
+    <value type="QString">VS90COMNTOOLS=C:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools\</value>
+    <value type="QString">WINDIR=C:\WINDOWS</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">C:/src/sakalendar/sakalendar.pro</value>
+    <value type="QString">-spec</value>
+    <value type="QString">win32-g++</value>
+    <value type="QString">-r</value>
+    <value type="QString">CONFIG+=release</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">c:/qt/2010.02.1/qt/bin/qmake.exe</value>
+   <value key="abstractProcess.enabled" type="bool">false</value>
+   <value key="abstractProcess.workingDirectory" type="QString">C:/src/sakalendar</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep1</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">ALLUSERSPROFILE=C:\Documents and Settings\All Users</value>
+    <value type="QString">APPDATA=C:\Documents and Settings\Jack\Application Data</value>
+    <value type="QString">BASEMAKE=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Include\BKOffice.Mak</value>
+    <value type="QString">BKOFFICE=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">COMMONPROGRAMFILES=C:\Program Files\Common Files</value>
+    <value type="QString">COMPUTERNAME=WINDA</value>
+    <value type="QString">COMSPEC=C:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString">FP_NO_HOST_CHECK=NO</value>
+    <value type="QString">HOMEDRIVE=C:</value>
+    <value type="QString">HOMEPATH=\Documents and Settings\Jack</value>
+    <value type="QString">INCLUDE=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Include\.;C:\OSGeo4W\include;C:\MinGW\include</value>
+    <value type="QString">INETSDK=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">LANG=en</value>
+    <value type="QString">LIB=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Lib\.</value>
+    <value type="QString">LIB_DIR=C:\OSGeo4W\lib</value>
+    <value type="QString">LOGONSERVER=\\WINDA</value>
+    <value type="QString">MSSDK=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">MSTOOLS=C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\.</value>
+    <value type="QString">NUMBER_OF_PROCESSORS=1</value>
+    <value type="QString">OS=Windows_NT</value>
+    <value type="QString">PATH=C:\Qt\2010.02.1\mingw\bin;C:\Qt\2010.02.1\qt\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\.;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\WinNT\.;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\.;C:\Program Files\Microsoft Platform SDK for Windows Server 2003 R2\Bin\WinNT\.;C:\Program Files\Microsoft Visual Studio 9.0\VC\bin;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE;C:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools;C:\Program Files\svn\bin;C:\Program Files\CMake 2.6\bin;</value>
+    <value type="QString">PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH</value>
+    <value type="QString">PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString">PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 6, GenuineIntel</value>
+    <value type="QString">PROCESSOR_LEVEL=6</value>
+    <value type="QString">PROCESSOR_REVISION=0f06</value>
+    <value type="QString">PROGRAMFILES=C:\Program Files</value>
+    <value type="QString">QSPECMAKE=win32-g++</value>
+    <value type="QString">QTDIR=C:/Qt/2010.02.1/qt</value>
+    <value type="QString">SAKALENDAR_INSTALL_PREFIX_WIN="C:\Documents and Settings\Jack\Soft\SAKalendar"</value>
+    <value type="QString">SYSTEMDRIVE=C:</value>
+    <value type="QString">SYSTEMROOT=C:\WINDOWS</value>
+    <value type="QString">TEMP=C:\DOCUME~1\Jack\LOCALS~1\Temp</value>
+    <value type="QString">TMP=C:\DOCUME~1\Jack\LOCALS~1\Temp</value>
+    <value type="QString">USERDOMAIN=WINDA</value>
+    <value type="QString">USERNAME=Jack</value>
+    <value type="QString">USERPROFILE=C:\Documents and Settings\Jack</value>
+    <value type="QString">VS90COMNTOOLS=C:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools\</value>
+    <value type="QString">WINDIR=C:\WINDOWS</value>
+   </valuelist>
+   <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">install</value>
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">C:/Qt/2010.02.1/mingw/bin/mingw32-make.exe</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">C:/src/sakalendar</value>
+   <valuelist key="makeargs" type="QVariantList">
+    <value type="QString">install</value>
+   </valuelist>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <value key="cleanConfig" type="bool">true</value>
+   <valuelist key="makeargs" type="QVariantList">
+    <value type="QString">clean</value>
+   </valuelist>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfigurations</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">Release</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>buildstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+   <value key="mkspec" type="QString"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildstep1</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildsteps</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">trolltech.qt4projectmanager.qmake</value>
+   <value type="QString">trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+   <value key="clean" type="bool">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>cleansteps</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>defaultFileEncoding</variable>
+  <value type="QByteArray">UTF-8</value>
+ </data>
+ <data>
+  <variable>project</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+</qtcreator>
