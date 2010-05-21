@@ -50,7 +50,7 @@ SADBGui::SADBGui(QWidget *parent) :
 {
     setupUi(this);
     readSettings();
-    setWindowIcon(QIcon(":/SAKalendar/SADBApp/icons/sadatabase.png"));
+    setWindowIcon(QIcon(":/SAKalendar/SADBApp/icons/sadb.png"));
 
     init();
     createSorokovnik();

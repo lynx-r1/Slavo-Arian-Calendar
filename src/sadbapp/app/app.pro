@@ -33,7 +33,7 @@ unix {
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
     scripts.files = sadb
     scripts.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
-    icons.files = sadatabase.png
+    icons.files = sadb.png
     icons.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/share/icons
     INSTALLS = target \
         scripts \

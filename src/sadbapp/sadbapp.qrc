@@ -3,6 +3,6 @@
         <file>fonts/IzhitsaC.ttf</file>
         <file>icons/next.png</file>
         <file>icons/prev.png</file>
-        <file>icons/sadatabase.png</file>
+        <file>icons/sadb.png</file>
     </qresource>
 </RCC>
