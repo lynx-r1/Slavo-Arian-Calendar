@@ -4,3 +4,15 @@
 
 TEMPLATE = subdirs
 SUBDIRS = src
+
+license.files = COPYING
+license.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)
+unix {
+    databases.files = share/databases/*
+    databases.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/share/databases
+} else:win32 {
+    databases.files = share\databases\*
+    databases.path = $$(SAKALENDAR_INSTALL_PREFIX_WIN)\databases
+}
+INSTALLS = license \
+        databases

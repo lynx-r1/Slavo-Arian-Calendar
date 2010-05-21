@@ -1,3 +1,22 @@
+/*****************************************************************************
+ *   Copyright (C) 2009-2010  Jack R  <lynx21.12.12@yandex.ru>               *
+ *                                                                           *
+ *   This file is part of SAKalendar.                                        *
+ *                                                                           *
+ *   SAKalendar is free software: you can redistribute it and/or modify      *
+ *   it under the terms of the GNU General Public License as published by    *
+ *   the Free Software Foundation, either version 3 of the License, or       *
+ *   (at your option) any later version.                                     *
+ *                                                                           *
+ *   This program is distributed in the hope that it will be useful,         *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ *   GNU General Public License for more details.                            *
+ *                                                                           *
+ *   You should have received a copy of the GNU General Public License       *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
+ ****************************************************************************/
+
 #include <QDebug>
 #include <QGraphicsDropShadowEffect>
 #include <QMessageBox>
@@ -23,7 +42,7 @@ SorokovnikApp::SorokovnikApp(QWidget *parent)
     , mLeto(-1)
 {
     setupUi(this);
-    setWindowIcon(QIcon(":/SAKalendar/SorokovnikApp/images/icons/sorokovnik.png"));
+    setWindowIcon(QIcon(":/SAKalendar/SorokovnikApp/icons/sorokovnik.png"));
 
     QFont saFont(SAFONTFAMILYIZHITSAC, 12);
     mPrazdnikiTextEdit->setFont(saFont);
@@ -144,7 +163,7 @@ void SorokovnikApp::populateZametkamiLeto(int leto)
 {
     mZametkiDB = QSqlDatabase::addDatabase("QSQLITE", QString("%1_%2.db").arg(mZametkiDBName).arg(leto));
 #if defined(Q_OS_UNIX)
-    mZametkiDB.setDatabaseName(QString("../share/%1_%2.db").arg(mZametkiDBName).arg(leto));
+    mZametkiDB.setDatabaseName(QString("../share/databases/%1_%2.db").arg(mZametkiDBName).arg(leto));
 #elif defined(Q_OS_WIN)
     mZametkiDB.setDatabaseName(QString("databases/%1_%2.db").arg(mZametkiDBName).arg(leto));
 #endif

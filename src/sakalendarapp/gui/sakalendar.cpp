@@ -1,3 +1,22 @@
+/*****************************************************************************
+ *   Copyright (C) 2009-2010  Jack R  <lynx21.12.12@yandex.ru>               *
+ *                                                                           *
+ *   This file is part of SAKalendar.                                        *
+ *                                                                           *
+ *   SAKalendar is free software: you can redistribute it and/or modify      *
+ *   it under the terms of the GNU General Public License as published by    *
+ *   the Free Software Foundation, either version 3 of the License, or       *
+ *   (at your option) any later version.                                     *
+ *                                                                           *
+ *   This program is distributed in the hope that it will be useful,         *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ *   GNU General Public License for more details.                            *
+ *                                                                           *
+ *   You should have received a copy of the GNU General Public License       *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
+ ****************************************************************************/
+
 #include <QDebug>
 #include <QGraphicsEffect>
 #include <QGraphicsView>
@@ -33,9 +52,9 @@ SAKalendar::SAKalendar(QWidget *parent)
 
     mMainToolBar->setOrientation(Qt::Vertical);
 
-    setWindowIcon(QIcon(":/SAKalendar/SAKalendarApp/images/icons/kalyadnik.png"));
+    setWindowIcon(QIcon(":/SAKalendar/SAKalendarApp/icons/sakalendar.png"));
 
-    createKalyadnikLogo();
+    createSAKalendarLogo();
     createSAKalendarView();
     loadPlugins();
     createToolBar();
@@ -165,28 +184,28 @@ void SAKalendar::createToolBar()
     mRangeWidgetButton->setFixedSize(ToolButtonSize);
     mRangeWidgetButton->setBackgroundColor(buttonColor);
     mRangeWidgetButton->setToolTip(tr("Начальное расположение"));
-    mRangeWidgetButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/ranged.png"));
+    mRangeWidgetButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/icons/ranged.png"));
     connect(mRangeWidgetButton, SIGNAL(clicked()), this, SLOT(resetItemPos()));
 
     mSettingsButton = new SAGraphicsPushButton;
     mSettingsButton->setFixedSize(ToolButtonSize);
     mSettingsButton->setBackgroundColor(buttonColor);
     mSettingsButton->setToolTip(tr("Настройки"));
-    mSettingsButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/settings.png"));
+    mSettingsButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/icons/settings.png"));
     connect(mSettingsButton, SIGNAL(clicked()), mSettingsDialog, SLOT(show()));
 
     mAboutButton = new SAGraphicsPushButton;
     mAboutButton->setFixedSize(ToolButtonSize);
     mAboutButton->setBackgroundColor(buttonColor);
     mAboutButton->setToolTip(tr("О программе"));
-    mAboutButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/kalyadnik.png"));
+    mAboutButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/icons/sakalendar.png"));
     connect(mAboutButton, SIGNAL(clicked()), this, SLOT(showAbout()));
 
     mQuitButton = new SAGraphicsPushButton;
     mQuitButton->setFixedSize(ToolButtonSize);
     mQuitButton->setBackgroundColor(buttonColor);
     mQuitButton->setToolTip(tr("Выход"));
-    mQuitButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/images/icons/power.png"));
+    mQuitButton->setPixmap(QPixmap(":/SAKalendar/SAKalendarApp/icons/power.png"));
     connect(mQuitButton, SIGNAL(clicked()), this, SLOT(close()));
 
     QSettings s;
@@ -227,7 +246,7 @@ void SAKalendar::createSAKalendarView()
     mSettingsDialog = new SAKSettingsDialog(this, mSAKalendarView->scene(), mMainToolBar, mKalyadnikLogo);
 }
 
-void SAKalendar::createKalyadnikLogo()
+void SAKalendar::createSAKalendarLogo()
 {
     mKalyadnikLogo = new SAGraphicsItemGroup;
 
@@ -242,7 +261,7 @@ void SAKalendar::createKalyadnikLogo()
     dropShadowSlogan->setColor(QColor(32, 32, 32, 200));
 
     QGraphicsPixmapItem *pixmap = new QGraphicsPixmapItem(
-            QPixmap(":/SAKalendar/SAKalendarApp/images/icons/kalyadnik.png"));
+            QPixmap(":/SAKalendar/SAKalendarApp/icons/sakalendar.png"));
 
     QGraphicsTextItem *name = new QGraphicsTextItem(tr("Славяно-Арийский Календарь"));
     QFont f(SAFONTFAMILYIZHITSAC);
@@ -385,21 +404,21 @@ void SAKalendar::loadPlugins()
             if (krugolet) {
                 QString dk4Name = tr("Даарийский Круголет Числобога");
                 QGraphicsWidget *k = krugolet->sozdatKrugolet(dk4Name, mGroupStates, mStateMachine);
-                addPlugin(k, QPixmap(":/SAKalendar/SAKalendarApp/images/icons/dk4.png"), dk4Name);
+                addPlugin(k, QPixmap(":/SAKalendar/SAKalendarApp/icons/dk4.png"), dk4Name);
             }
 
             ChasyInterface *chasy = qobject_cast<ChasyInterface *>(plugin);
             if (chasy) {
                 QString sachasyName = tr("Славяно-Арийские часы");
                 QGraphicsWidget *ch = chasy->sozdatGraphicsChasy(sachasyName, mGroupStates, mStateMachine);
-                addPlugin(ch, QPixmap(":/SAKalendar/SAKalendarApp/images/icons/sachasy.png"), sachasyName);
+                addPlugin(ch, QPixmap(":/SAKalendar/SAKalendarApp/icons/sachasy.png"), sachasyName);
             }
 
             SorokovnikInterface *sorokovnik = qobject_cast<SorokovnikInterface *>(plugin);
             if (sorokovnik) {
                 QString sorokovnikName = tr("Сороковник");
                 QGraphicsWidget *s = sorokovnik->sozdatSorokovnik(sorokovnikName, mGroupStates, mStateMachine);
-                addPlugin(s, QPixmap(":/SAKalendar/SAKalendarApp/images/icons/sorokovnik.png"), sorokovnikName);
+                addPlugin(s, QPixmap(":/SAKalendar/SAKalendarApp/icons/sorokovnik.png"), sorokovnikName);
             }
         } else {
             qWarning() << loader.errorString();

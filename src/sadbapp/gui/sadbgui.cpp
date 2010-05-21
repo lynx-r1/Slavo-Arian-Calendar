@@ -1,3 +1,22 @@
+/*****************************************************************************
+ *   Copyright (C) 2009-2010  Jack R  <lynx21.12.12@yandex.ru>               *
+ *                                                                           *
+ *   This file is part of SAKalendar.                                        *
+ *                                                                           *
+ *   SAKalendar is free software: you can redistribute it and/or modify      *
+ *   it under the terms of the GNU General Public License as published by    *
+ *   the Free Software Foundation, either version 3 of the License, or       *
+ *   (at your option) any later version.                                     *
+ *                                                                           *
+ *   This program is distributed in the hope that it will be useful,         *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ *   GNU General Public License for more details.                            *
+ *                                                                           *
+ *   You should have received a copy of the GNU General Public License       *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
+ ****************************************************************************/
+
 #include <QDataWidgetMapper>
 #include <QDebug>
 #include <QGraphicsEffect>
@@ -31,7 +50,7 @@ SADBGui::SADBGui(QWidget *parent) :
 {
     setupUi(this);
     readSettings();
-    setWindowIcon(QIcon(":/SAKalendar/SADBApp/images/icons/sadatabase.png"));
+    setWindowIcon(QIcon(":/SAKalendar/SADBApp/icons/sadatabase.png"));
 
     init();
     createSorokovnik();
@@ -166,7 +185,7 @@ void SADBGui::setLeto()
 {
     mSorokovnik->setLeto(mSrkLetoSpinBox->value(), false);
 #if defined(Q_OS_UNIX)
-    mSrkDBNameLineEdit->setText(QString("../share/%1_%2.db").arg(SADBPRAZDNIKINAME).arg(mSorokovnik->leto()));
+    mSrkDBNameLineEdit->setText(QString("../share/databases/%1_%2.db").arg(SADBPRAZDNIKINAME).arg(mSorokovnik->leto()));
 #elif defined(Q_OS_WIN)
     mSrkDBNameLineEdit->setText(QString("databases/%1_%2.db").arg(SADBPRAZDNIKINAME).arg(mSorokovnik->leto()));
 #endif
@@ -521,7 +540,7 @@ void SADBGui::init()
 
     int kzhizniFromSMZH = SADate::currentDate().kzhizniFromSMZH();
 #if defined(Q_OS_UNIX)
-    mDK4DBNameLineEdit->setText(QString("../share/%1_%2.db").arg(SADBOPISANIELETNAME)
+    mDK4DBNameLineEdit->setText(QString("../share/databases/%1_%2.db").arg(SADBOPISANIELETNAME)
                                 .arg(kzhizniFromSMZH));
 #elif defined(Q_OS_WIN)
     mDK4DBNameLineEdit->setText(QString("databases/%1_%2.db").arg(SADBOPISANIELETNAME)
@@ -533,7 +552,7 @@ void SADBGui::init()
 
     int leto = SADate::currentDate().leto();
 #if defined(Q_OS_UNIX)
-    mSrkDBNameLineEdit->setText(QString("../share/%1_%2.db").arg(SADBPRAZDNIKINAME)
+    mSrkDBNameLineEdit->setText(QString("../share/databases/%1_%2.db").arg(SADBPRAZDNIKINAME)
                                 .arg(leto));
 #elif defined(Q_OS_WIN)
     mSrkDBNameLineEdit->setText(QString("databases/%1_%2.db").arg(SADBPRAZDNIKINAME)

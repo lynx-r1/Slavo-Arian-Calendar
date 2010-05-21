@@ -31,8 +31,11 @@ unix {
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
     scripts.files = sachasy
     scripts.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
+    icons.files = sachasy.png
+    icons.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/share/icons
     INSTALLS = target \
-        scripts
+        scripts \
+        icons
 } else:win32 {
     RC_FILE = sachasyapp.rc
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_WIN)

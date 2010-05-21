@@ -84,7 +84,7 @@
     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Release</value>
     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">0</value>
-    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString"></value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">/home/jack/dev/sakalendar</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">3</value>
     <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">0</value>

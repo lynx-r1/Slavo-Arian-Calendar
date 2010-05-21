@@ -1,3 +1,22 @@
+/*****************************************************************************
+ *   Copyright (C) 2009-2010  Jack R  <lynx21.12.12@yandex.ru>               *
+ *                                                                           *
+ *   This file is part of SAKalendar.                                        *
+ *                                                                           *
+ *   SAKalendar is free software: you can redistribute it and/or modify      *
+ *   it under the terms of the GNU General Public License as published by    *
+ *   the Free Software Foundation, either version 3 of the License, or       *
+ *   (at your option) any later version.                                     *
+ *                                                                           *
+ *   This program is distributed in the hope that it will be useful,         *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ *   GNU General Public License for more details.                            *
+ *                                                                           *
+ *   You should have received a copy of the GNU General Public License       *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
+ ****************************************************************************/
+
 #include <QDebug>
 #include <QDialogButtonBox>
 
@@ -491,7 +510,7 @@ void SorokovnikDB::populatePrazdnikamiLeto(int leto)
 {
     QSqlDatabase::removeDatabase(mPrazdnikiDbConnectionName);
 #if defined(Q_OS_UNIX)
-    mPrazdnikiDbName = QString("../share/%1_%2.db").arg(SADBPRAZDNIKINAME).arg(leto);
+    mPrazdnikiDbName = QString("../share/databases/%1_%2.db").arg(SADBPRAZDNIKINAME).arg(leto);
 #elif defined(Q_OS_WIN)
     mPrazdnikiDbName = QString("databases/%1_%2.db").arg(SADBPRAZDNIKINAME).arg(leto);
 #endif
@@ -887,7 +906,7 @@ QGraphicsLayout *Sorokovnik::shemaNavig()
     mPrevLetoPushButton->setToolTip(tr("Перейти на предыдущее лето"));
     mPrevLetoPushButton->setFixedSize(ButtonSize);
     mPrevLetoPushButton->setJump(jump);
-    mPrevLetoPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/images/prevprev.png"));
+    mPrevLetoPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/icons/prevprev.png"));
     connect(mPrevLetoPushButton, SIGNAL(clicked()), this, SLOT(predLeto()));
 
     // кнопка перехода на предыдущий сороковник
@@ -896,7 +915,7 @@ QGraphicsLayout *Sorokovnik::shemaNavig()
     mPrevSorokovnikPushButton->setToolTip(tr("Перейти на предыдущий сороковник"));
     mPrevSorokovnikPushButton->setFixedSize(ButtonSize);
     mPrevSorokovnikPushButton->setJump(jump);
-    mPrevSorokovnikPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/images/prev.png"));
+    mPrevSorokovnikPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/icons/prev.png"));
     connect(mPrevSorokovnikPushButton, SIGNAL(clicked()), this, SLOT(predSorokovnik()));
 
     // кнопка перехода на дату
@@ -936,7 +955,7 @@ QGraphicsLayout *Sorokovnik::shemaNavig()
     mNextSorokovnikPushButton->setToolTip(tr("Перейти на следующий сороковник"));
     mNextSorokovnikPushButton->setFixedSize(ButtonSize);
     mNextSorokovnikPushButton->setJump(jump);
-    mNextSorokovnikPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/images/next.png"));
+    mNextSorokovnikPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/icons/next.png"));
     connect(mNextSorokovnikPushButton, SIGNAL(clicked()), this, SLOT(sledSorokovnik()));
 
     // кнопка перехода на следующее лето
@@ -945,7 +964,7 @@ QGraphicsLayout *Sorokovnik::shemaNavig()
     mNextLetoPushButton->setToolTip(tr("Перейти на следующее лето"));
     mNextLetoPushButton->setFixedSize(ButtonSize);
     mNextLetoPushButton->setJump(jump);
-    mNextLetoPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/images/nextnext.png"));
+    mNextLetoPushButton->setPixmap(QPixmap(":/SAKalendar/sorokovniklib/icons/nextnext.png"));
     connect(mNextLetoPushButton, SIGNAL(clicked()), this, SLOT(sledLeto()));
 
     return shema;

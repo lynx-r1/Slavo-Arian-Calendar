@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/SAKalendar/DK4App">
         <file>fonts/IzhitsaC.ttf</file>
-        <file>images/icons/dk4.png</file>
+        <file>icons/dk4.png</file>
     </qresource>
 </RCC>

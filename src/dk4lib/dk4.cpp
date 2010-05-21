@@ -1,3 +1,22 @@
+/*****************************************************************************
+ *   Copyright (C) 2009-2010  Jack R  <lynx21.12.12@yandex.ru>               *
+ *                                                                           *
+ *   This file is part of SAKalendar.                                        *
+ *                                                                           *
+ *   SAKalendar is free software: you can redistribute it and/or modify      *
+ *   it under the terms of the GNU General Public License as published by    *
+ *   the Free Software Foundation, either version 3 of the License, or       *
+ *   (at your option) any later version.                                     *
+ *                                                                           *
+ *   This program is distributed in the hope that it will be useful,         *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ *   GNU General Public License for more details.                            *
+ *                                                                           *
+ *   You should have received a copy of the GNU General Public License       *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
+ ****************************************************************************/
+
 #include <QDebug>
 #include <QDialogButtonBox>
 
@@ -231,7 +250,7 @@ DK4DB::DK4DB(QGraphicsItem *parent, bool deflt)
 QSqlDatabase DK4DB::openOpisanieLetDb(int kzhizniFromSMZH)
 {
 #if defined(Q_OS_UNIX)
-    QString dbName = QString("../share/%1_%2.db").arg(SADBOPISANIELETNAME)
+    QString dbName = QString("../share/databases/%1_%2.db").arg(SADBOPISANIELETNAME)
                      .arg(kzhizniFromSMZH);
 #elif defined(Q_OS_WIN)
     QString dbName = QString("databases/%1_%2.db").arg(SADBOPISANIELETNAME)
@@ -543,7 +562,7 @@ QGraphicsLayout *DK4::shemaNavig()
     predKZhizni->setToolTip(tr("Перейти на предыдущее Круг Жизни"));
     predKZhizni->setFixedSize(ButtonSize);
     predKZhizni->setJump(jump);
-    predKZhizni->setPixmap(QPixmap(":/SAKalendar/dk4lib/images/prev.png"));
+    predKZhizni->setPixmap(QPixmap(":/SAKalendar/dk4lib/icons/prev.png"));
     connect(predKZhizni, SIGNAL(clicked()), this, SLOT(predKZhizniOtSMZH()));
 
     // надпись указывающая текущее лето
@@ -573,7 +592,7 @@ QGraphicsLayout *DK4::shemaNavig()
     sledKZhizni->setToolTip(tr("Перейти на предыдущее Круг Жизни"));
     sledKZhizni->setFixedSize(ButtonSize);
     sledKZhizni->setJump(jump);
-    sledKZhizni->setPixmap(QPixmap(":/SAKalendar/dk4lib/images/next.png"));
+    sledKZhizni->setPixmap(QPixmap(":/SAKalendar/dk4lib/icons/next.png"));
     connect(sledKZhizni, SIGNAL(clicked()), this, SLOT(sledKZhizniOtSMZH()));
 
     return shema;
