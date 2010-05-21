@@ -402,21 +402,21 @@ void SAKalendar::loadPlugins()
         if (plugin) {
             KrugoletChislobogaInterface *krugolet = qobject_cast<KrugoletChislobogaInterface *>(plugin);
             if (krugolet) {
-                QString dk4Name = tr("Даарийский Круголет Числобога");
+                QString dk4Name = krugolet->krugolet();
                 QGraphicsWidget *k = krugolet->sozdatKrugolet(dk4Name, mGroupStates, mStateMachine);
                 addPlugin(k, QPixmap(":/SAKalendar/SAKalendarApp/icons/dk4.png"), dk4Name);
             }
 
             ChasyInterface *chasy = qobject_cast<ChasyInterface *>(plugin);
             if (chasy) {
-                QString sachasyName = tr("Славяно-Арийские часы");
+                QString sachasyName = chasy->chasy();
                 QGraphicsWidget *ch = chasy->sozdatGraphicsChasy(sachasyName, mGroupStates, mStateMachine);
                 addPlugin(ch, QPixmap(":/SAKalendar/SAKalendarApp/icons/sachasy.png"), sachasyName);
             }
 
             SorokovnikInterface *sorokovnik = qobject_cast<SorokovnikInterface *>(plugin);
             if (sorokovnik) {
-                QString sorokovnikName = tr("Сороковник");
+                QString sorokovnikName = sorokovnik->sorokovnik();
                 QGraphicsWidget *s = sorokovnik->sozdatSorokovnik(sorokovnikName, mGroupStates, mStateMachine);
                 addPlugin(s, QPixmap(":/SAKalendar/SAKalendarApp/icons/sorokovnik.png"), sorokovnikName);
             }

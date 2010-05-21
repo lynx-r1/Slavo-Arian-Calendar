@@ -29,13 +29,13 @@ ChasyPlugin::ChasyPlugin()
 
 QStringList ChasyPlugin::chasy() const
 {
-    return QStringList() << tr("Славянские круговые часы") << tr("Славянские числовые часы");
+    return QStringList() << tr("Славяно-Арийские Часы");
 }
 
 QGraphicsWidget *ChasyPlugin::sozdatGraphicsChasy(QString chasy, QState *group,
                                                   QStateMachine *machine)
 {
-    if (chasy == tr("Славяно-Арийские часы")) {
+    if (chasy == tr("Славяно-Арийские Часы")) {
         SAChasyOkno *c = new SAChasyOkno(group, machine);
         return c;
     }
