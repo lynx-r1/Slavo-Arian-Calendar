@@ -60,7 +60,7 @@
                  </property>
                  <property name="icon">
                   <iconset resource="../../sadbapp.qrc">
-                   <normaloff>:/SAKalendar/SADBApp/images/icons/prev.png</normaloff>:/SAKalendar/SADBApp/images/icons/prev.png</iconset>
+                   <normaloff>:/SAKalendar/SADBApp/icons/prev.png</normaloff>:/SAKalendar/SADBApp/icons/prev.png</iconset>
                  </property>
                 </widget>
                </item>
@@ -113,7 +113,7 @@
                  </property>
                  <property name="icon">
                   <iconset resource="../../sadbapp.qrc">
-                   <normaloff>:/SAKalendar/SADBApp/images/icons/next.png</normaloff>:/SAKalendar/SADBApp/images/icons/next.png</iconset>
+                   <normaloff>:/SAKalendar/SADBApp/icons/next.png</normaloff>:/SAKalendar/SADBApp/icons/next.png</iconset>
                  </property>
                 </widget>
                </item>
@@ -732,7 +732,6 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../sadbapp.qrc"/>
   <include location="../../sadbapp.qrc"/>
  </resources>
  <connections/>

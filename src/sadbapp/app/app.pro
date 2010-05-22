@@ -23,7 +23,6 @@ QT += sql
 
 # Input
 SOURCES += main.cpp
-RESOURCES += ../sadbapp.qrc
 QMAKE_CLEAN = ../../../bin/$${TARGET}
 unix {
     OBJECTS_DIR = .obj
