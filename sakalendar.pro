@@ -6,16 +6,18 @@ TEMPLATE = subdirs
 SUBDIRS = src
 
 license.files = COPYING
-license.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)
+readme.files = README
 unix {
+    license.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)
+    readme.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)
     databases.files = share/databases/*
     databases.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/share/databases
 } else:win32 {
+    license.path = $$(SAKALENDAR_INSTALL_PREFIX_WIN)
+    readme.path = $$(SAKALENDAR_INSTALL_PREFIX_WIN)
     databases.files = share\databases\*
     databases.path = $$(SAKALENDAR_INSTALL_PREFIX_WIN)\databases
 }
-readme.files = README
-readme.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)
 INSTALLS = license \
         databases \
         readme
