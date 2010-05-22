@@ -42,4 +42,5 @@ unix {
 }
 
 OTHER_FILES += \
-    sadb
+    sadb \
+    sadbapp.rc

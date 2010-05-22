@@ -43,4 +43,5 @@ unix {
 }
 
 OTHER_FILES += \
-    sachasy
+    sachasy \
+    sachasyapp.rc

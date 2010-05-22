@@ -45,4 +45,5 @@ unix {
 }
 
 OTHER_FILES += \
-    dk4
+    dk4 \
+    dk4app.rc

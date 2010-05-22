@@ -32,4 +32,5 @@ unix {
 }
 
 OTHER_FILES += \
-    sakalendar
+    sakalendar \
+    sakalendarapp.rc

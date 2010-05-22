@@ -47,4 +47,5 @@ unix {
 
 OTHER_FILES += \
     sorokovnik \
+    sorokovnikapp.rc \
     TODO
