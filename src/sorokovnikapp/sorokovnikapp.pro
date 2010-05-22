@@ -34,7 +34,7 @@ unix {
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
     scripts.files = sorokovnik
     scripts.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
-    icons.files = sorokovnik.png
+    icons.files = icons/sorokovnik.png
     icons.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/share/icons
     INSTALLS = target \
         scripts \
@@ -44,3 +44,7 @@ unix {
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_WIN)
     INSTALLS = target
 }
+
+OTHER_FILES += \
+    sorokovnik \
+    TODO

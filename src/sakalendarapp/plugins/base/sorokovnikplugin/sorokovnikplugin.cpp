@@ -17,31 +17,22 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
  ****************************************************************************/
 
-#include <QGraphicsWidget>
-#include <QStringList>
-
 #include "sorokovnikokno.h"
-
 #include "sorokovnikplugin.h"
 
 SorokovnikPlugin::SorokovnikPlugin()
 {
 }
 
-QStringList SorokovnikPlugin::sorokovnik() const
+QString SorokovnikPlugin::sorokovnikName() const
 {
-    return QStringList() << tr("Сороковник");
+    return tr("Сороковник");
 }
 
-QGraphicsWidget *SorokovnikPlugin::sozdatSorokovnik(QString sorokovnik, QState *group,
-                                                    QStateMachine *machine)
+QGraphicsWidget *SorokovnikPlugin::sozdatSorokovnik(QState *group, QStateMachine *machine)
 {
-    if (sorokovnik == tr("Сороковник")) {
-        SorokovnikOkno *s = new SorokovnikOkno(group, machine);
-        return s;
-    }
-
-    return 0;
+    SorokovnikOkno *s = new SorokovnikOkno(group, machine);
+    return s;
 }
 
 Q_EXPORT_PLUGIN2(sorokovnikplugin, SorokovnikPlugin)

@@ -17,29 +17,22 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
  ****************************************************************************/
 
-#include <QHBoxLayout>
-
 #include "sachasyokno.h"
-
 #include "sachasyplugin.h"
 
-ChasyPlugin::ChasyPlugin()
+SAChasyPlugin::SAChasyPlugin()
 {
 }
 
-QStringList ChasyPlugin::chasy() const
+QString SAChasyPlugin::sachasyName() const
 {
-    return QStringList() << tr("Славяно-Арийские Часы");
+    return tr("Славяно-Арийские Часы");
 }
 
-QGraphicsWidget *ChasyPlugin::sozdatGraphicsChasy(QString chasy, QState *group,
-                                                  QStateMachine *machine)
+QGraphicsWidget *SAChasyPlugin::sozdatSAChasy(QState *group, QStateMachine *machine)
 {
-    if (chasy == tr("Славяно-Арийские Часы")) {
-        SAChasyOkno *c = new SAChasyOkno(group, machine);
-        return c;
-    }
-    return 0;
+    SAChasyOkno *ch = new SAChasyOkno(group, machine);
+    return ch;
 }
 
-Q_EXPORT_PLUGIN2(chasyplugin, ChasyPlugin)
+Q_EXPORT_PLUGIN2(SAChasyPlugin, SAChasyPlugin)

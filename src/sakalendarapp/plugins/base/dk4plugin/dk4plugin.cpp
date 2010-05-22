@@ -17,30 +17,22 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
  ****************************************************************************/
 
-#include <QGraphicsView>
-#include <QStringList>
-
 #include "dk4okno.h"
-
 #include "dk4plugin.h"
 
 DK4Plugin::DK4Plugin()
 {
 }
 
-QStringList DK4Plugin::krugolet() const
+QString DK4Plugin::dk4Name() const
 {
-    return QStringList() << tr("Даарийский Круголет Числобога");
+    return tr("Даарийский Круголет Числобога");
 }
 
-QGraphicsWidget *DK4Plugin::sozdatKrugolet(QString krugolet, QState *group, QStateMachine *machine)
+QGraphicsWidget *DK4Plugin::sozdatDK4(QState *group, QStateMachine *machine)
 {
-    if (krugolet == tr("Даарийский Круголет Числобога")) {
-        DK4Okno *k = new DK4Okno(group, machine);
-        return k;
-    }
-
-    return 0;
+    DK4Okno *k = new DK4Okno(group, machine);
+    return k;
 }
 
 Q_EXPORT_PLUGIN2(dk4plugin, DK4Plugin)

@@ -400,25 +400,22 @@ void SAKalendar::loadPlugins()
         QPluginLoader loader(mPluginsDir.absoluteFilePath(fileName));
         QObject *plugin = loader.instance();
         if (plugin) {
-            KrugoletChislobogaInterface *krugolet = qobject_cast<KrugoletChislobogaInterface *>(plugin);
-            if (krugolet) {
-                QString dk4Name = krugolet->krugolet();
-                QGraphicsWidget *k = krugolet->sozdatKrugolet(dk4Name, mGroupStates, mStateMachine);
-                addPlugin(k, QPixmap(":/SAKalendar/SAKalendarApp/icons/dk4.png"), dk4Name);
+            DK4Interface *dk4 = qobject_cast<DK4Interface *>(plugin);
+            if (dk4) {
+                QGraphicsWidget *k = dk4->sozdatDK4(mGroupStates, mStateMachine);
+                addPlugin(k, QPixmap(":/SAKalendar/SAKalendarApp/icons/dk4.png"), dk4->dk4Name());
             }
 
-            ChasyInterface *chasy = qobject_cast<ChasyInterface *>(plugin);
-            if (chasy) {
-                QString sachasyName = chasy->chasy();
-                QGraphicsWidget *ch = chasy->sozdatGraphicsChasy(sachasyName, mGroupStates, mStateMachine);
-                addPlugin(ch, QPixmap(":/SAKalendar/SAKalendarApp/icons/sachasy.png"), sachasyName);
+            SAChasyInterface *sachasy = qobject_cast<SAChasyInterface *>(plugin);
+            if (sachasy) {
+                QGraphicsWidget *ch = sachasy->sozdatSAChasy(mGroupStates, mStateMachine);
+                addPlugin(ch, QPixmap(":/SAKalendar/SAKalendarApp/icons/sachasy.png"), sachasy->sachasyName());
             }
 
             SorokovnikInterface *sorokovnik = qobject_cast<SorokovnikInterface *>(plugin);
             if (sorokovnik) {
-                QString sorokovnikName = sorokovnik->sorokovnik();
-                QGraphicsWidget *s = sorokovnik->sozdatSorokovnik(sorokovnikName, mGroupStates, mStateMachine);
-                addPlugin(s, QPixmap(":/SAKalendar/SAKalendarApp/icons/sorokovnik.png"), sorokovnikName);
+                QGraphicsWidget *s = sorokovnik->sozdatSorokovnik(mGroupStates, mStateMachine);
+                addPlugin(s, QPixmap(":/SAKalendar/SAKalendarApp/icons/sorokovnik.png"), sorokovnik->sorokovnikName());
             }
         } else {
             qWarning() << loader.errorString();

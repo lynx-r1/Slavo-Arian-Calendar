@@ -33,13 +33,13 @@ unix {
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
     scripts.files = sadb
     scripts.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
-    icons.files = sadb.png
-    icons.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/share/icons
     INSTALLS = target \
-        scripts \
-        icons
+        scripts
 } else:win32 {
     RC_FILE = sadbapp.rc
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_WIN)
     INSTALLS = target
 }
+
+OTHER_FILES += \
+    sadb

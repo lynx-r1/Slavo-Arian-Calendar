@@ -30,52 +30,32 @@ class QWidget;
 
 class KDTimeTimer;
 
-class KrugoletChislobogaInterface {
+class DK4Interface {
 public:
-    virtual ~KrugoletChislobogaInterface() {}
+    virtual ~DK4Interface() {}
 
-    virtual QStringList krugolet() const = 0;
-    virtual QGraphicsWidget *sozdatKrugolet(QString krugolet, QState *group, QStateMachine *machine) = 0;
+    virtual QString dk4Name() const = 0;
+    virtual QGraphicsWidget *sozdatDK4(QState *group, QStateMachine *machine) = 0;
 };
-#if 0
-class NachalaSorokovnikovInterface {
-public:
-    virtual ~NachalaSorokovnikovInterface() {}
 
-    virtual QStringList nachalaSorokovnikov() const = 0;
-    virtual QGraphicsWidget *sozdatNachalaSorokovnikov(QString nachSorok) = 0;
-};
-#endif
 class SorokovnikInterface {
 public:
     virtual ~SorokovnikInterface() {}
 
-    virtual QStringList sorokovnik() const = 0;
-    virtual QGraphicsWidget *sozdatSorokovnik(QString sorokovnik, QState *group,
-                                              QStateMachine *machine) = 0;
+    virtual QString sorokovnikName() const = 0;
+    virtual QGraphicsWidget *sozdatSorokovnik(QState *group, QStateMachine *machine) = 0;
 };
 
-class ChasyInterface {
+class SAChasyInterface {
 public:
-    virtual ~ChasyInterface() {}
+    virtual ~SAChasyInterface() {}
 
-    virtual QStringList chasy() const = 0;
-    virtual QGraphicsWidget *sozdatGraphicsChasy(QString chasy, QState *group,
-                                                 QStateMachine *machine) = 0;
+    virtual QString sachasyName() const = 0;
+    virtual QGraphicsWidget *sozdatSAChasy(QState *group, QStateMachine *machine) = 0;
 };
 
-class RaschetyInterface {
-public:
-    virtual ~RaschetyInterface() {}
-
-    virtual QStringList raschety() const = 0;
-    virtual QWidget *sozdatRaschet(QString raschet) = 0;
-};
-
-Q_DECLARE_INTERFACE(KrugoletChislobogaInterface, "KalyadyDar.KrugoletChislobogaInterface/0.1")
-//Q_DECLARE_INTERFACE(NachalaSorokovnikovInterface, "KalyadyDar.NachalaSorokovnikovInterface/0.1")
-Q_DECLARE_INTERFACE(SorokovnikInterface, "KalyadyDar.SorokovnikInterface/0.1")
-Q_DECLARE_INTERFACE(ChasyInterface, "KalyadyDar.ChasyInterface/0.1")
-Q_DECLARE_INTERFACE(RaschetyInterface, "KalyadyDar.RaschetyInterface/0.1")
+Q_DECLARE_INTERFACE(DK4Interface, "SAKalendar.DK4Interface/0.1")
+Q_DECLARE_INTERFACE(SorokovnikInterface, "SAKalendar.SorokovnikInterface/0.1")
+Q_DECLARE_INTERFACE(SAChasyInterface, "SAKalendar.SAChasyInterface/0.1")
 
 #endif // INTERFACES_H

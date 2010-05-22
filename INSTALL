@@ -1,11 +1,4 @@
-To install:
-1. Set install prefix
-export SAKALENDAR_INSTALL_PREFIX=$HOME/Soft/sakalendar
-or
-set installation prefix in install_prefix.sh
-2. Run build&install script:
+Для установки в Linux:
+1. Укажите в переменной SAKALENDAR_INSTALL_PREFIX_UNIX из файла install_prefix.sh путь установки программы;
+2. Запустите скрипт сборки и установки:
 ./build.sh
-or do it yourself: 
-. ./install_prefix.sh
-qmake
-make && make install

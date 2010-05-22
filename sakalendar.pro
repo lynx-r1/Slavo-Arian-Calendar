@@ -14,5 +14,15 @@ unix {
     databases.files = share\databases\*
     databases.path = $$(SAKALENDAR_INSTALL_PREFIX_WIN)\databases
 }
+readme.files = README
+readme.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)
 INSTALLS = license \
-        databases
+        databases \
+        readme
+
+OTHER_FILES += \
+    COPYING \
+    INSTALL \
+    README \
+    install_prefix.sh \
+    build.sh

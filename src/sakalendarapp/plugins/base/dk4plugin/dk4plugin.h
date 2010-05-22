@@ -25,15 +25,15 @@
 QT_FORWARD_DECLARE_CLASS(QState)
 QT_FORWARD_DECLARE_CLASS(QStateMachine)
 
-class DK4Plugin : public QObject, public KrugoletChislobogaInterface {
+class DK4Plugin : public QObject, public DK4Interface {
     Q_OBJECT
-    Q_INTERFACES(KrugoletChislobogaInterface)
+    Q_INTERFACES(DK4Interface)
 
 public:
     DK4Plugin();
 
-    QStringList krugolet() const;
-    QGraphicsWidget *sozdatKrugolet(QString krugolet, QState *group, QStateMachine *machine);
+    QString dk4Name() const;
+    QGraphicsWidget *sozdatDK4(QState *group, QStateMachine *machine);
 };
 
 #endif // DK4PLUGIN_H

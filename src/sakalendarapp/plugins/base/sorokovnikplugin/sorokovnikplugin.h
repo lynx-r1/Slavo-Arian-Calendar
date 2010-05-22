@@ -32,9 +32,8 @@ class SorokovnikPlugin : public QObject, public SorokovnikInterface {
 public:
     SorokovnikPlugin();
 
-    QStringList sorokovnik() const;
-    QGraphicsWidget *sozdatSorokovnik(QString sorokovnik, QState *group,
-                                      QStateMachine *machine);
+    QString sorokovnikName() const;
+    QGraphicsWidget *sozdatSorokovnik(QState *group, QStateMachine *machine);
 };
 
 #endif // SOROKOVNIKPLUGIN_H

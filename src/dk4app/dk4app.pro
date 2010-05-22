@@ -33,7 +33,7 @@ unix {
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
     scripts.files = dk4
     scripts.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/bin
-    icons.files = dk4.png
+    icons.files = icons/dk4.png
     icons.path = $$(SAKALENDAR_INSTALL_PREFIX_UNIX)/share/icons
     INSTALLS = target \
         scripts \
@@ -43,3 +43,6 @@ unix {
     target.path += $$(SAKALENDAR_INSTALL_PREFIX_WIN)
     INSTALLS = target
 }
+
+OTHER_FILES += \
+    dk4

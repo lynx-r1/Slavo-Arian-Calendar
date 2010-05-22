@@ -17,21 +17,20 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.   *
  ****************************************************************************/
 
-#ifndef CHASYIPLUGIN_H
-#define CHASYIPLUGIN_H
+#ifndef SACHASYIPLUGIN_H
+#define SACHASYIPLUGIN_H
 
 #include "interfaces.h"
 
-class ChasyPlugin : public QObject, public ChasyInterface {
+class SAChasyPlugin : public QObject, public SAChasyInterface {
     Q_OBJECT
-    Q_INTERFACES(ChasyInterface)
+    Q_INTERFACES(SAChasyInterface)
 
 public:
-    ChasyPlugin();
+    SAChasyPlugin();
 
-    QStringList chasy() const;
-    QGraphicsWidget *sozdatGraphicsChasy(QString chasy, QState *group,
-                                         QStateMachine *machine);
+    QString sachasyName() const;
+    QGraphicsWidget *sozdatSAChasy(QState *group, QStateMachine *machine);
 };
 
-#endif // CHASYIPLUGIN_H
+#endif // SACHASYIPLUGIN_H

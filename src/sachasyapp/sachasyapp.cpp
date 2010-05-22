@@ -107,14 +107,14 @@ void SAChasyApp::closeEvent(QCloseEvent *e)
 
 void SAChasyApp::showAbout()
 {
-    QString about = tr("<b>Славяно-Арийские часы (Версия %1)</b><br>"
-                       "Программа показывает Славяно-Арийское время и дату(опц.).<br><br>"
+    QString about = tr("<b>Славяно-Арийские Часы (Версия %1)</b><br>"
+                       "Программа показывает Славяно-Арийское время и дату.<br><br>"
                        "Программа написана на Qt %2.<br><br>"
                        "<b>Разработчик</b><br>"
                        "<span style='white-space:pre'>    Рысь (lynx_r)</span>")
             .arg(QCoreApplication::applicationVersion()).arg(qVersion());
 
-    QMessageBox::about(this, tr("О программе Славяно-Арийские часы"), about);
+    QMessageBox::about(this, tr("О программе Славяно-Арийские Часы"), about);
 }
 
 void SAChasyApp::readSettings()
@@ -137,7 +137,7 @@ void SAChasyApp::createActions()
     connect(mSettingsAction, SIGNAL(triggered()), mSettingsDialog, SLOT(show()));
     addAction(mSettingsAction);
 
-    mAboutAction = new QAction(tr("О программе Славяно-Арийские часы"), this);
+    mAboutAction = new QAction(tr("О программе Славяно-Арийские Часы"), this);
     connect(mAboutAction, SIGNAL(triggered()), this, SLOT(showAbout()));
     addAction(mAboutAction);
 
