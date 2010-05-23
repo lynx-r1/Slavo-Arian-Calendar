@@ -198,7 +198,7 @@ void SAChasy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
         painter->setFont(saFont);
         painter->setPen(chetvertCvet);
-        painter->drawText(QRect(-w / 2, -50, w, h), Qt::AlignCenter, chas);
+        painter->drawText(QRect(-w / 2 - 2, -50, w + 4, h), Qt::AlignCenter, chas);
 
         // подписываем четверти суток
         saFont.setPointSize(7);
@@ -208,7 +208,7 @@ void SAChasy::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         painter->setFont(saFont);
         painter->setPen(SAChetvertySutok_Cveta[vecher].second);
         w = fm.width(SAChetvertySutok_Cveta[vecher].first);
-        painter->drawText(QRect(20, -30, w, h), Qt::AlignCenter,
+        painter->drawText(QRect(22, -30, w, h), Qt::AlignCenter,
                           SAChetvertySutok_Cveta[vecher].first);
 
         int noch = mPravSutKrug ? 3 : 1;
