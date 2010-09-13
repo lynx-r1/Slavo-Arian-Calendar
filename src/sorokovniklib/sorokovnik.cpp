@@ -383,7 +383,6 @@ void SorokovnikBase::pereitiNaLeto(int leto, bool silent)
 
         // удаляем предыдущий сороковник из памяти
         QTimer::singleShot(duration, widgetStack, SLOT(deleteLater()));
-        QTimer::singleShot(duration + 1000, widgetStack, SLOT(deleteLater())); // на всякий случай
     } else {
         delete widgetStack;
     }

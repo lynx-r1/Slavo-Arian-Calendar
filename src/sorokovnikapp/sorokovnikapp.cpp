@@ -47,6 +47,7 @@ SorokovnikApp::SorokovnikApp(QWidget *parent)
     QFont saFont(SAFONTFAMILYIZHITSAC, 12);
     mPrazdnikiTextEdit->setFont(saFont);
     mZametkiTextEdit->setFont(saFont);
+    mZametkiTextEdit->setReadOnly(true);
 
     readSettings();
     createSorokovnik();
@@ -148,7 +149,10 @@ void SorokovnikApp::daySelected(int den, int sorokovnik, int leto)
         mZametkiTextEdit->setHtml(footer);
     }
 
+    mZametkiTextEdit->setReadOnly(den == -1);
     mZametkiTextEdit->setFocus();
+
+    // TODO: запомнить положение курсора
     mZametkiTextEdit->moveCursor(QTextCursor::End);
     mZametkiTextEdit->moveCursor(QTextCursor::Up);
     mZametkiTextEdit->moveCursor(QTextCursor::Up);
